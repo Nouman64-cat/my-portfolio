@@ -24,18 +24,18 @@ const Navigation: React.FC<NavigationProps> = ({ homeInView, projectsInView, ski
   }, [homeInView, projectsInView, skillsInView, contactInView]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gray-900 p-4 z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-gray-900 p-4 z-50 font-axiforma">
       <ul className="flex justify-around text-white">
-        <li className={activeSection === 'home' ? 'font-bold' : ''}>
+        <li className={activeSection === 'home' ? 'font-bold bg-slate-400 py-1 px-3 rounded-full' : ''}>
           <a href="#home">Home</a>
         </li>
-        <li className={activeSection === 'projects' ? 'font-bold' : ''}>
+        <li className={activeSection === 'projects' ? 'font-bold bg-slate-400 p-3 rounded-full' : ''}>
           <a href="#projects">Projects</a>
         </li>
-        <li className={activeSection === 'skills' ? 'font-bold' : ''}>
+        <li className={activeSection === 'skills' ? 'font-bold bg-slate-400 p-3 rounded-full' : ''}>
           <a href="#skills">Skills</a>
         </li>
-        <li className={activeSection === 'contact' ? 'font-bold' : ''}>
+        <li className={activeSection === 'contact' ? 'font-bold bg-slate-400 p-3 rounded-full' : ''}>
           <a href="#contact">Contact Me</a>
         </li>
       </ul>

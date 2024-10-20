@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
         className="flex items-center justify-center min-h-screen"
         data-scroll-section
       >
-        <h1 className="name text-white text-5xl md:text-7xl font-bold opacity-0 translate-y-10">
+        <h1 className="name text-white text-5xl md:text-7xl font-bold translate-y-10 font-axiforma">
           Nouman Ejaz
         </h1>
       </section>
