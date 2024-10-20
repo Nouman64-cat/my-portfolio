@@ -1,4 +1,3 @@
-// components/Navigation.tsx
 import { useEffect, useState } from 'react';
 
 interface NavigationProps {
@@ -8,25 +7,42 @@ interface NavigationProps {
   contactInView: boolean;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ homeInView, projectsInView, skillsInView, contactInView }) => {
-  const [activeSection, setActiveSection] = useState<string>('home');
+const Navigation: React.FC<NavigationProps> = ({
+  homeInView,
+  projectsInView,
+  skillsInView,
+  contactInView,
+}) => {
+  const [activeSection, setActiveSection] = useState<string>('hero');
 
   useEffect(() => {
-    console.log("Home in view:", homeInView);
-    console.log("Projects in view:", projectsInView);
-    console.log("Skills in view:", skillsInView);
-    console.log("Contact in view:", contactInView);
-
-    if (homeInView) setActiveSection('home');
-    else if (projectsInView) setActiveSection('projects');
-    else if (skillsInView) setActiveSection('skills');
-    else if (contactInView) setActiveSection('contact');
+    if (homeInView) {
+      setActiveSection('hero');
+    } else if (projectsInView) {
+      setActiveSection('projects');
+    } else if (skillsInView) {
+      setActiveSection('skills');
+    } else if (contactInView) {
+      setActiveSection('contact');
+    }
   }, [homeInView, projectsInView, skillsInView, contactInView]);
+  useEffect(() => {
+    if (contactInView) {
+      setActiveSection('contact');
+    } else if (skillsInView) {
+      setActiveSection('skills');
+    } else if (projectsInView) {
+      setActiveSection('projects');
+    } else if (homeInView) {
+      setActiveSection('hero');
+    }
+  }, [homeInView, projectsInView, skillsInView, contactInView]);
+  
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gray-900 p-4 z-50">
-      <ul className="flex justify-around text-white">
-        <li className={activeSection === 'home' ? 'font-bold' : ''}>
+    <nav className="fixed top-0 left-0 right-0  p-4 z-50">
+      <ul className="flex justify-around text-slate-700">
+        <li className={activeSection === 'hero' ? 'font-bold' : ''}>
           <a href="#home">Home</a>
         </li>
         <li className={activeSection === 'projects' ? 'font-bold' : ''}>
