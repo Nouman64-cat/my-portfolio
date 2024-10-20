@@ -1,9 +1,7 @@
-// components/HomePage.tsx
 "use client"
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
-import LocomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 const HomePage: React.FC = () => {
@@ -11,23 +9,29 @@ const HomePage: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Check if ref is not null before creating LocomotiveScroll instance
-    if (scrollContainerRef.current) {
-      const scroll = new LocomotiveScroll({
-        el: scrollContainerRef.current,
-        smooth: true,
-      });
+    // Ensure LocomotiveScroll only runs on the client-side
+    const initializeScroll = async () => {
+      if (typeof window !== 'undefined' && scrollContainerRef.current) {
+        const LocomotiveScroll = (await import('locomotive-scroll')).default;
 
-      // Clean up on component unmount
-      return () => {
-        if (scroll) scroll.destroy();
-      };
-    }
+        const scroll = new LocomotiveScroll({
+          el: scrollContainerRef.current,
+          smooth: true,
+        });
+
+        // Clean up on component unmount
+        return () => {
+          if (scroll) scroll.destroy();
+        };
+      }
+    };
+
+    initializeScroll();
   }, []); // Empty dependency array means this runs once after initial render
 
   useEffect(() => {
-    // GSAP Animation for name reveal
-    if (nameInView) {
+    // GSAP Animation for name reveal only on the client-side
+    if (nameInView && typeof window !== 'undefined') {
       gsap.to('.name', {
         opacity: 1,
         y: 0,
