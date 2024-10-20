@@ -11,12 +11,21 @@ const HomePage: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Initialize Locomotive Scroll for smooth scrolling
-    const scroll = new LocomotiveScroll({
-      el: scrollContainerRef.current,
-      smooth: true,
-    });
+    // Check if ref is not null before creating LocomotiveScroll instance
+    if (scrollContainerRef.current) {
+      const scroll = new LocomotiveScroll({
+        el: scrollContainerRef.current,
+        smooth: true,
+      });
 
+      // Clean up on component unmount
+      return () => {
+        if (scroll) scroll.destroy();
+      };
+    }
+  }, []); // Empty dependency array means this runs once after initial render
+
+  useEffect(() => {
     // GSAP Animation for name reveal
     if (nameInView) {
       gsap.to('.name', {
@@ -26,10 +35,6 @@ const HomePage: React.FC = () => {
         ease: 'power2.out',
       });
     }
-
-    return () => {
-      if (scroll) scroll.destroy();
-    };
   }, [nameInView]);
 
   return (
