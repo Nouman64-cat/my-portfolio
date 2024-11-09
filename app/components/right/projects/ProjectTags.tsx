@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ProjectTagsProps {
   tags: string[];
@@ -10,9 +10,9 @@ const ProjectTags: React.FC<ProjectTagsProps> = ({ tags }) => {
       {tags.map((tag, index) => (
         <span
           key={index}
-          className="px-3 py-1 text-white text-[12px] font-medium bg-bluish rounded-full"
+          className="px-3 py-1 text-white text-[12px] font-medium bg-purplish rounded-full"
         >
-          #{tag}
+          #{tag.trim()}
         </span>
       ))}
     </div>

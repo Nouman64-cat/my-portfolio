@@ -1,19 +1,48 @@
-import React from 'react';
+import React from "react";
 
-const Introduction = () => {
+const Introduction = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div className="bg-dark_bg text-white max-w-3xl mx-auto">
+    <div
+      id="introduction"
+      ref={ref}
+      className="bg-dark_bg text-white max-w-3xl mx-auto"
+    >
       <p className="mb-4">
-        Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and I’ve had the privilege of building software for an <span className="font-semibold">advertising agency</span>, a <span className="font-semibold">start-up</span>, a <span className="font-semibold">huge corporation</span>, and a <span className="font-semibold">digital product studio</span>.
+        As a passionate and skilled Software Developer, I specialize in building
+        high-quality software applications that drive efficiency and
+        scalability. With a strong foundation in software engineering, web
+        development, and machine learning, I’ve honed my expertise across
+        various projects and roles, including as a{" "}
+        <span className="font-medium text-purplish">Co-Founder at CareerTweakrz</span>
       </p>
       <p className="mb-4">
-        My main focus these days is building accessible user interfaces for our customers at <span className="font-semibold">Klaviyo</span>. I most enjoy building software in the sweet spot where design and engineering meet — things that look good but are also built well under the hood. In my free time, I've also released an <span className="font-semibold">online video course</span> that covers everything you need to know to build a web app with the Spotify API.
+        My technical journey is anchored in the MERN stack, where I bring
+        dynamic and robust full-stack applications to life. On the front-end, I
+        excel in crafting responsive and engaging user interfaces using{" "}
+        <span className="font-medium text-purplish">Next.js, React, Tailwind CSS</span>, and{" "}
+        <span className="font-medium text-purplish">Redux</span>. My experience extends into
+        machine learning, utilizing Python libraries like{" "}
+        <span className="font-medium text-purplish">TensorFlow</span> and{" "}
+        <span className="font-medium text-purplish">Keras</span> to develop intelligent,
+        data-driven solutions.
+      </p>
+      <p className="mb-4">
+        I am also a plugin developer, having created impactful Figma plugins
+        like <span className="font-medium text-purplish">GlassAura</span> and{" "}
+        <span className="font-medium text-purplish">Claymorphism</span>, which enhance
+        design capabilities for fellow creatives. My ability to communicate
+        effectively and collaborate across teams has consistently enabled me to
+        deliver projects on time and within scope.
       </p>
       <p>
-        When I’m not at the computer, I’m usually rock climbing, reading, hanging out with my wife and two cats, or running around Hyrule searching for <span className="font-semibold">Korok seeds</span>.
+        Beyond my technical work, I hold a BS in Software Engineering from the
+        University of Management and Technology, and I am constantly eager to
+        connect with like-minded professionals to explore innovative solutions
+        in the tech space. Let's connect and discuss how I can contribute to
+        your next project or product idea!
       </p>
     </div>
   );
-}
+});
 
 export default Introduction;
