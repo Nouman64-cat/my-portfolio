@@ -1,27 +1,34 @@
-"use client"
-import { useRef, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import gsap from 'gsap';
-import Projects from './Projects';
-import Skills from './Skills';
-import ContactMe from './ContactMe';
-import Navigation from './Navigation';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
-import Hero from './Hero';
+"use client";
+import { useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import gsap from "gsap";
+import Projects from "./Projects";
+import Skills from "./Skills";
+import ContactMe from "./ContactMe";
+import Navigation from "./Navigation";
+import "locomotive-scroll/dist/locomotive-scroll.css";
+import Hero from "./Hero";
+import Blob from "./Blob";
 
 const HomePage: React.FC = () => {
   const { ref: homeRef, inView: homeInView } = useInView({ threshold: 0.5 });
-  const { ref: projectsRef, inView: projectsInView } = useInView({ threshold: 0.5 });
-  const { ref: skillsRef, inView: skillsInView } = useInView({ threshold: 0.5 });
-  const { ref: contactRef, inView: contactInView } = useInView({ threshold: 0.5 });
+  const { ref: projectsRef, inView: projectsInView } = useInView({
+    threshold: 0.5,
+  });
+  const { ref: skillsRef, inView: skillsInView } = useInView({
+    threshold: 0.5,
+  });
+  const { ref: contactRef, inView: contactInView } = useInView({
+    threshold: 0.5,
+  });
 
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const initializeScroll = async () => {
-      if (typeof window !== 'undefined' && scrollContainerRef.current) {
-        const LocomotiveScroll = (await import('locomotive-scroll')).default;
-        
+      if (typeof window !== "undefined" && scrollContainerRef.current) {
+        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+
         const scroll = new LocomotiveScroll({
           el: scrollContainerRef.current,
           smooth: true,
@@ -33,13 +40,13 @@ const HomePage: React.FC = () => {
             scroll.update();
           }
         };
-        window.addEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
 
         return () => {
           if (scroll) {
             scroll.destroy();
           }
-          window.removeEventListener('resize', handleResize);
+          window.removeEventListener("resize", handleResize);
         };
       }
     };
@@ -48,7 +55,11 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div ref={scrollContainerRef} data-scroll-container className=" min-h-screen">
+    <div
+      ref={scrollContainerRef}
+      data-scroll-container
+      className=" min-h-screen"
+    >
       <Navigation
         homeInView={homeInView}
         projectsInView={projectsInView}
@@ -56,7 +67,7 @@ const HomePage: React.FC = () => {
         contactInView={contactInView}
       />
       <Hero ref={homeRef} />
-
+      <Blob />
       <Projects ref={projectsRef} />
       <Skills ref={skillsRef} />
       <ContactMe ref={contactRef} />
