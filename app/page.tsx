@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef } from "react";
 import Left from "./components/left/Left";
 import Right from "./components/right/Right";
@@ -17,7 +17,7 @@ const Page = () => {
       <div className="p-20 flex justify-between w-full">
         {/* Pass the rightContainerRef as root to IntersectionNavigation */}
         {/* <IntersectionNavigation root={rightContainerRef.current} /> */}
-        <div className="fixed h-screen">
+        <div className="fixed h-screen hidden md:block"> {/* Hidden on mobile screens */}
           <Left />
         </div>
         <div

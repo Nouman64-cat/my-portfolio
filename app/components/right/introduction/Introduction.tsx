@@ -7,8 +7,8 @@ const Introduction = React.forwardRef<HTMLDivElement>((props, ref) => {
       ref={ref}
       className="bg-dark_bg text-white max-w-3xl mx-auto"
     >
-      <p className="mb-4">
-        As a passionate and skilled Software Developer, I specialize in building
+      <p className="mb-4">Hi!{" "}
+      <span className="font-medium text-purplish">Nouman Ejaz</span> skilled Software Developer, I specialize in building
         high-quality software applications that drive efficiency and
         scalability. With a strong foundation in software engineering, web
         development, and machine learning, I’ve honed my expertise across
