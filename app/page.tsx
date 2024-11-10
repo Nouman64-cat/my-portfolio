@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import Left from "./components/left/Left";
 import Right from "./components/right/Right";
 import Dot from "./components/general/Dot";
-import IntersectionNavigation from "./components/left/IntersectionNavigation";
+import IntersectionNavigation from "./components/general/IntersectionNavigation";
 
 const Page = () => {
   // Define refs for each section

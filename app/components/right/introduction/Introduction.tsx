@@ -1,4 +1,5 @@
 import React from "react";
+import Resume from "../download-resume/Resume";
 
 const Introduction = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -41,6 +42,7 @@ const Introduction = React.forwardRef<HTMLDivElement>((props, ref) => {
         in the tech space. Let's connect and discuss how I can contribute to
         your next project or product idea!
       </p>
+      <Resume />
     </div>
   );
 });
