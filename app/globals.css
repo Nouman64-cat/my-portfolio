@@ -291,3 +291,37 @@
 .custom-toast .Toastify__progress-bar {
   background-color: #4b38d3 !important; /* Custom progress bar color */
 }
+
+/* Star Background Styles */
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float infinite linear;
+}
+
+/* Animation for stars */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translate(5vw, -10vh) rotate(15deg) scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-5vw, -30vh) rotate(-15deg) scale(0.8);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(10vw, -60vh) rotate(10deg) scale(0.7);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-10vw, -100vh) rotate(-10deg) scale(0.5);
+    opacity: 0;
+  }
+}

@@ -26,9 +26,12 @@
     "react-lottie-player": "^2.1.0",
     "react-spring": "^9.7.4",
     "react-toastify": "^10.0.6",
+    "react-tsparticles": "^2.12.2",
     "recharts": "^2.13.0",
     "sharp": "^0.33.5",
-    "three": "^0.169.0"
+    "three": "^0.169.0",
+    "tsparticles": "^3.5.0",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@types/locomotive-scroll": "^4.1.3",
