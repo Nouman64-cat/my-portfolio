@@ -13,9 +13,7 @@ const Page = () => {
   const rightContainerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <StarBackground>
-      <Dot>
-        {/* Main wrapper */}
+
         <div className="p-4 md:p-14 flex flex-col md:flex-row w-full">
           {/* Left component */}
           <div className="w-full md:w-96 md:fixed md:top-14 md:left-14 mb-6 md:mb-0">
@@ -34,8 +32,6 @@ const Page = () => {
             />
           </div>
         </div>
-      </Dot>
-    </StarBackground>
   );
 };
 

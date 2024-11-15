@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-
+import StarBackground from "./components/general/StarBackground";
+import Dot from "./components/general/Dot";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-axiforma bg-dark_greyish text-white`}
       >
-        {children}
+        <StarBackground>
+          <Dot>{children}</Dot>
+        </StarBackground>
       </body>
     </html>
   );
