@@ -18,14 +18,14 @@ const Page = () => {
         {/* Main wrapper */}
         <div className="p-4 md:p-14 flex flex-col md:flex-row w-full">
           {/* Left component */}
-          <div className="w-full md:w-96 md:fixed md:top-10 md:left-10 mb-6 md:mb-0">
+          <div className="w-full md:w-96 md:fixed md:top-14 md:left-14 mb-6 md:mb-0">
             <Left />
           </div>
 
           {/* Right content */}
           <div
             ref={rightContainerRef}
-            className="flex w-full md:ml-64 justify-end overflow-y-auto"
+            className="flex w-full md:ml-64 justify-end overflow-y-auto mt-14"
           >
             <Right
               introRef={introRef}
