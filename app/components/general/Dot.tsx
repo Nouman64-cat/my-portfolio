@@ -50,7 +50,7 @@ const Dot: React.FC<DotProps> = ({ children }) => {
           left: dotPosition.x,
           top: dotPosition.y,
           transform: 'translate(-50%, -50%)',
-          position: 'absolute',
+          position: 'fixed',
         }}
         className="w-3 h-3 border-2 border-purplish rounded-full pointer-events-none"
       />
