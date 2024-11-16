@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Header = () => {
@@ -8,6 +9,11 @@ const Header = () => {
       <p className="text-light_greyish text-sm">
         I build experience with user interfaces and intriguing designs
       </p>
+      {/* <div>
+        <Link href="/free-resources">
+          Free Resources
+        </Link>
+      </div> */}
     </div>
   );
 };

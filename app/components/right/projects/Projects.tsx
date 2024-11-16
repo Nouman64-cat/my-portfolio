@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import ProjectTags from "./ProjectTags"; // Import the ProjectTags component
 import { HiOutlineCalendar } from "react-icons/hi2"; // Example icon for project duration
 import { Projects as ProjectType } from "@/app/interfaces/project"; // Adjust the import path for the interface
-import { fetchProjects } from '@/app/graphql';
+import { fetchProjects } from "@/app/graphql";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 const Projects = React.forwardRef<HTMLDivElement>((props, ref) => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
@@ -27,14 +29,20 @@ const Projects = React.forwardRef<HTMLDivElement>((props, ref) => {
           <h3 className="text-2xl font-medium text-bluish">
             {project.projectTitle}
           </h3>
-
           {/* Project Description */}
           <p className="mt-2 text-gray-300">{project.projectDescription}</p>
-
           {/* Tags */}
-          <ProjectTags tags={project.projectTags.split(" ")} /> {/* Split tags by spaces */}
+          <ProjectTags tags={project.projectTags.split(" ")} />{" "}
+          {/* Split tags by spaces */}
         </div>
       ))}
+      <div className="mb-4 text-purplish group">
+        <Link href="/projects-archive" className="flex items-center gap-3">
+          <p className="font-thin">View All Projects</p>
+          {/* Icon with hover animation */}
+          <FaArrowRight className="mb-1 transition-transform duration-300 group-hover:translate-x-2" />
+        </Link>
+      </div>
     </div>
   );
 });

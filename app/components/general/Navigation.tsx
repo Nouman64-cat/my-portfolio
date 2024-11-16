@@ -64,11 +64,12 @@ const Navigation = () => {
         </a>
         {/* Uncomment to add other sections */}
         {/* <a
-          href="#free-resources"
+          href="/free-resources"
           className={`py-2 text-gray-300 ${activeSection === 'free-resources' ? 'text-purplish font-semibold' : ''}`}
         >
           Free Resources
-        </a>
+        </a> */}
+        {/* 
         <a
           href="#contact"
           className={`py-2 text-gray-300 ${activeSection === 'contact' ? 'text-purplish font-semibold' : ''}`}
