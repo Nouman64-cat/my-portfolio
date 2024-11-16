@@ -4,7 +4,8 @@ import { HiOutlineCalendar } from "react-icons/hi2"; // Example icon for project
 import { Projects as ProjectType } from "@/app/interfaces/project"; // Adjust the import path for the interface
 import { fetchProjects } from "@/app/graphql";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
+import { IoIosLink } from "react-icons/io";
 
 const Projects = React.forwardRef<HTMLDivElement>((props, ref) => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
@@ -26,8 +27,19 @@ const Projects = React.forwardRef<HTMLDivElement>((props, ref) => {
           className="mb-8 hover:border-2 hover:border-purplish hover:border-opacity-10 rounded-2xl p-4 hover:bg-light_greenish hover:bg-opacity-10 transition duration-500 ease-in-out"
         >
           {/* Project Title */}
-          <h3 className="text-2xl font-medium text-bluish">
-            {project.projectTitle}
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-3 group"
+          >
+            <h3 className="text-2xl font-medium text-purplish">
+              {project.projectTitle}
+            </h3>
+            <IoIosLink className="mb-1 text-xl text-purplish transition-transform duration-300 group-hover:scale-110 group-hover:text-light_greenish" />
+          </a>
+          <h3 className="text-[12px] font-light mb-3 text-zinc-400">
+            {project.projectShortTitle}
           </h3>
           {/* Project Description */}
           <p className="mt-2 text-gray-300">{project.projectDescription}</p>
@@ -37,8 +49,11 @@ const Projects = React.forwardRef<HTMLDivElement>((props, ref) => {
         </div>
       ))}
       <div className="mb-4 text-purplish group">
-        <Link href="/projects-archive" className="flex items-center gap-3">
-          <p className="font-thin">View All Projects</p>
+        <Link
+          href="/projects-archive"
+          className="flex items-center gap-3 hover:underline"
+        >
+          <p className="font-normal">View All Projects</p>
           {/* Icon with hover animation */}
           <FaArrowRight className="mb-1 transition-transform duration-300 group-hover:translate-x-2" />
         </Link>

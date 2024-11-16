@@ -3,4 +3,6 @@ export interface Projects {
     projectDescription: string;
     projectTags: string;
     projectTitle: string;
+    projectShortTitle: string;
+    link: string;
 }

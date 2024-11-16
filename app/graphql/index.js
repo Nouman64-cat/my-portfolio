@@ -11,6 +11,8 @@ export const fetchProjects = async () => {
         projectDescription
         projectTags
         projectTitle
+        projectShortTitle
+        link
       }
     }
   `;

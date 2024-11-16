@@ -147,15 +147,15 @@ const ProjectTable = () => {
     <div className="overflow-x-auto bg-dark_bg text-white rounded-lg shadow-lg">
       <table className="table-auto w-full border-collapse ">
         <thead className="bg-subdark text-gray-300">
-          <tr>
-            <th className="p-4 text-left font-medium">Year</th>
-            <th className="p-4 text-left font-medium">Project</th>
+          <tr className="border-b border-gray-700 mb-3">
+            <th className="p-4 text-left font-medium text-purplish">Year</th>
+            <th className="p-4 text-left font-medium text-purplish">Project</th>
             {/* "Built with" column hidden on small screens */}
-            <th className="p-4 text-left font-medium hidden md:table-cell">
+            <th className="p-4 text-left font-medium hidden md:table-cell text-purplish">
               Built with
             </th>
             {/* "Link" column hidden on small screens */}
-            <th className="p-4 text-left font-medium hidden md:table-cell">
+            <th className="p-4 text-left font-medium hidden md:table-cell text-purplish">
               Link
             </th>
           </tr>
