@@ -5,7 +5,7 @@ import { FaArrowCircleLeft, FaArrowLeft } from "react-icons/fa";
 
 const page = () => {
   return (
-    <div className="min-h-screen p-20">
+    <div className="min-h-screen p-10 md:p-20">
       <div className="mb-10">
         <div className="mb-4 hover:text-purplish group">
           <Link href="/" className="flex items-center gap-3">
