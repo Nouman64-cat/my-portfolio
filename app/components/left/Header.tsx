@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaDribbble } from "react-icons/fa";
+import DesktopNavigation from "../general/DesktopNavigation";
 
 const Header = () => {
   // Social links array
@@ -22,13 +23,18 @@ const Header = () => {
   ];
 
   return (
-    <div className="space-y-4 mt-24 md:mt-14">
+    <div className="flex flex-col gap-3 md:gap-20 mt-24 md:mt-14">
       {/* Name and Introduction */}
-      <h1 className="text-purplish text-5xl font-bold">Nouman Ejaz</h1>
-      <p className="text-light_greyish">Frontend Engineer | UI/UX Designer</p>
-      <p className="text-light_greyish text-sm">
-        I build experience with user interfaces and intriguing designs
-      </p>
+      <div className="space-y-3">
+        <h1 className="text-purplish text-5xl font-bold">Nouman Ejaz</h1>
+        <p className="text-light_greyish">Frontend Engineer | UI/UX Designer</p>
+        <p className="text-light_greyish text-sm">
+          I build experience with user interfaces and intriguing designs
+        </p>
+      </div>
+      <div>
+        <DesktopNavigation />
+      </div>
 
       {/* Social Links */}
       <div className="flex gap-6 mt-4">
