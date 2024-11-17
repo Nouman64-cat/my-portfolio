@@ -8,39 +8,25 @@ const Introduction = React.forwardRef<HTMLDivElement>((props, ref) => {
       ref={ref}
       className="bg-dark_bg text-white max-w-3xl mx-auto"
     >
-      <p className="mb-4">Hi!{" "}
-      <span className="font-medium text-purplish">Nouman Ejaz</span> skilled Software Developer, I specialize in building
-        high-quality software applications that drive efficiency and
-        scalability. With a strong foundation in software engineering, web
-        development, and machine learning, I’ve honed my expertise across
+      <p className="mb-4">
+        I'm <span className="text-white bg-purplish rounded-xl px-2 py-1">Nouman Ejaz</span>, skilled Frontend
+        Engineer and UI/UX Designer. I specialize in crafting responsive,
+        engaging, and visually appealing user interfaces that deliver
+        exceptional user experiences. With expertise in Next.js, React, Tailwind
+        CSS, and Redux, I build dynamic{" "}
+        <span className="text-white bg-purplish rounded-xl px-2 py-1">front-end applications</span> that are
+        both scalable and performance-driven. I’ve honed my expertise across
         various projects and roles, including as a{" "}
-        <span className="font-medium text-purplish">Co-Founder at CareerTweakrz</span>
+        <span className="text-white bg-purplish rounded-xl px-2 py-1">
+          Co-Founder at CareerTweakrz
+        </span>
       </p>
       <p className="mb-4">
-        My technical journey is anchored in the MERN stack, where I bring
-        dynamic and robust full-stack applications to life. On the front-end, I
-        excel in crafting responsive and engaging user interfaces using{" "}
-        <span className="font-medium text-purplish">Next.js, React, Tailwind CSS</span>, and{" "}
-        <span className="font-medium text-purplish">Redux</span>. My experience extends into
-        machine learning, utilizing Python libraries like{" "}
-        <span className="font-medium text-purplish">TensorFlow</span> and{" "}
-        <span className="font-medium text-purplish">Keras</span> to develop intelligent,
-        data-driven solutions.
-      </p>
-      <p className="mb-4">
-        I am also a plugin developer, having created impactful Figma plugins
-        like <span className="font-medium text-purplish">GlassAura</span> and{" "}
-        <span className="font-medium text-purplish">Claymorphism</span>, which enhance
-        design capabilities for fellow creatives. My ability to communicate
-        effectively and collaborate across teams has consistently enabled me to
-        deliver projects on time and within scope.
-      </p>
-      <p>
-        Beyond my technical work, I hold a BS in Software Engineering from the
-        University of Management and Technology, and I am constantly eager to
-        connect with like-minded professionals to explore innovative solutions
-        in the tech space. Let's connect and discuss how I can contribute to
-        your next project or product idea!
+        As a <span className="text-white bg-purplish rounded-xl px-2 py-1">UI/UX Designer</span>, I focus on creating intuitive designs that
+        prioritize user needs and aesthetics. My work extends to developing
+        impactful design tools, such as <span className="text-white bg-purplish rounded-xl px-2 py-1">Figma</span> plugins like GlassAura and
+        Claymorphism, which enhance the creative process for designers
+        worldwide.
       </p>
       <Resume />
     </div>
