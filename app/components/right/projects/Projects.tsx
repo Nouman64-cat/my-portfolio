@@ -48,16 +48,15 @@ const Projects = React.forwardRef<HTMLDivElement>((props, ref) => {
           {/* Split tags by spaces */}
         </div>
       ))}
-      <div className="mb-4 text-purplish group">
+      {/* <div className="mb-4 text-purplish group">
         <Link
           href="/projects-archive"
           className="flex items-center gap-3 hover:underline"
         >
           <p className="font-normal">View All Projects</p>
-          {/* Icon with hover animation */}
           <FaArrowRight className="mb-1 transition-transform duration-300 group-hover:translate-x-2" />
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 });
