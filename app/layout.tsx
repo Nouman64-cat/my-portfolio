@@ -30,9 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-axiforma bg-dark_greyish text-white`}
       >
-        <StarBackground>
           <Dot>{children}</Dot>
-        </StarBackground>
       </body>
     </html>
   );

@@ -1,72 +1,51 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import Left from "./components/left/Left";
-import Right from "./components/right/Right";
-import IntroModal from "./components/general/IntroModal";
-import WelcomeBackModal from "./components/general/WelcomeBackModal";
+import Link from "next/link";
+import React from "react";
+import { FaMagic } from "react-icons/fa"; // Magic wand icon
+import Particles from "./components/general/StarBackground";
 
-const Page = () => {
-  // Define refs for each section
-  const introRef = useRef<HTMLDivElement>(null);
-  const experienceRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const rightContainerRef = useRef<HTMLDivElement>(null);
+const navigation = [
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
+];
 
-  // State to track modals
-  const [isFirstVisit, setIsFirstVisit] = useState(false);
-  const [isReturningVisit, setIsReturningVisit] = useState(false);
-
-  useEffect(() => {
-    const hasVisitedBefore = localStorage.getItem("hasVisited");
-    const hasSessionModalShown = sessionStorage.getItem("hasShownWelcomeBack");
-
-    if (!hasVisitedBefore) {
-      // Show Intro Modal for first-time visitors
-      setIsFirstVisit(true);
-      localStorage.setItem("hasVisited", "true"); // Mark as visited permanently
-    } else if (!hasSessionModalShown) {
-      // Show Welcome Back Modal for returning users (once per session)
-      setIsReturningVisit(true);
-      sessionStorage.setItem("hasShownWelcomeBack", "true"); // Mark as shown for the session
-    }
-  }, []);
-
+export default function Home() {
   return (
-    <div className="p-4 md:p-14 flex flex-col md:flex-row w-full">
-      {/* Left component */}
-      <div className="w-full md:w-96 md:fixed md:top-14 md:left-14 mb-6 md:mb-0">
-        <Left />
+    <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+      {/* <nav className="my-16 animate-fade-in">
+        <ul className="flex items-center justify-center gap-4">
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </ul>
+      </nav> */}
+      <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+      <Particles
+        className="absolute inset-0 -z-10 animate-fade-in"
+        quantity={100}
+      />
+      <h1 className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+        Nouman Ejaz
+      </h1>
+
+      <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+      <div className="flex flex-col items-center justify-center space-y-8 animate-fade-in">
+        <h2 className="text-sm text-zinc-500 text-center">
+          I build experience with user interfaces and intriguing designs
+        </h2>
+        {/* Button Section */}
+        <Link href="/portfolio">
+          <button className="flex items-center px-6 py-3 text-sm font-normal text-white bg-purplish rounded-full shadow-lg border-2 border-transparent duration-500 hover:border-zinc-300 hover:ring-2 hover:ring-zinc-300 focus:outline-none">
+            <FaMagic className="mr-2 text-lg" />
+            Let’s Start
+          </button>
+        </Link>
       </div>
-
-      {/* Right content */}
-      <div
-        ref={rightContainerRef}
-        className="flex w-full md:ml-64 justify-end overflow-y-auto mt-14"
-      >
-        <Right
-          introRef={introRef}
-          experienceRef={experienceRef}
-          projectsRef={projectsRef}
-        />
-      </div>
-
-      {/* Intro Modal for first-time visitors */}
-      {isFirstVisit && (
-        <IntroModal
-          isOpen={isFirstVisit}
-          onClose={() => setIsFirstVisit(false)} // Close the modal
-        />
-      )}
-
-      {/* Welcome Back Modal for returning visitors */}
-      {isReturningVisit && (
-        <WelcomeBackModal
-          isOpen={isReturningVisit}
-          onClose={() => setIsReturningVisit(false)} // Close the modal
-        />
-      )}
     </div>
   );
-};
-
-export default Page;
+}
