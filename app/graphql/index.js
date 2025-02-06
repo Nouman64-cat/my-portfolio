@@ -38,6 +38,7 @@ export const fetchExperiences = async () => {
         experienceDescription
         experienceCompany
       }
+        // some comment
     }
   `;
   try {
