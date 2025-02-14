@@ -1,7 +1,7 @@
 export interface Experience {
     id: string;
     experienceLocation: string;
-    experienceEndDate: string;
+    experienceEndDate: string | null;
     experienceStartDate: string;
     experienceDesignation: string;
     experienceDescription: string;

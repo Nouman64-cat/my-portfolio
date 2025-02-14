@@ -14,10 +14,10 @@ const Right: React.FC<RightProps> = ({ introRef, experienceRef, projectsRef }) =
   return (
     <div className="space-y-10">
       <Introduction ref={introRef} />
-                  <Particles
+                  {/* <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
-      />
+      /> */}
       <Experience ref={experienceRef} />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"

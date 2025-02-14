@@ -38,11 +38,11 @@ const Projects = React.forwardRef<HTMLDivElement>((props, ref) => {
             </h3>
             <IoIosLink className="mb-1 text-xl text-purplish transition-transform duration-300 group-hover:scale-110 group-hover:text-light_greenish" />
           </a>
-          <h3 className="text-[12px] font-light mb-3 text-zinc-400">
+          <h3 className="text-[12px] font-normal mb-3 text-zinc-500">
             {project.projectShortTitle}
           </h3>
           {/* Project Description */}
-          <p className="mt-2 text-gray-300">{project.projectDescription}</p>
+          <p className="mt-2 text-gray-600">{project.projectDescription}</p>
           {/* Tags */}
           <ProjectTags tags={project.projectTags.split(" ")} />{" "}
           {/* Split tags by spaces */}

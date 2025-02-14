@@ -31,7 +31,7 @@ const Navigation = () => {
 
   return (
     <div
-      className={`fixed top-6 left-0 right-0 bg-dark_greyish border-2 border-purple-400 rounded-xl transition-all duration-300 block md:hidden mx-4 ${
+      className={`fixed top-0 left-0 right-0 bg-slate-50 border-2 border-purple-400 rounded-xl transition-all duration-300 block md:hidden mx-4 ${
         isScrolled
           ? "shadow-[0_0_10px_5px_rgba(155,93,229,1)] translate-y-0" // Updated shadow color to match the button's purple shade
           : "-translate-y-full"
@@ -40,7 +40,7 @@ const Navigation = () => {
       <nav className="flex justify-center space-x-4 mx-3 py-2 px-4">
         <a
           href="#introduction"
-          className={`py-2 text-gray-300 ${
+          className={`py-2 text-gray-500 ${
             activeSection === "introduction" ? "text-purplish font-semibold" : ""
           }`}
         >
@@ -48,7 +48,7 @@ const Navigation = () => {
         </a>
         <a
           href="#experience"
-          className={`py-2 text-gray-300 ${
+          className={`py-2 text-gray-500 ${
             activeSection === "experience" ? "text-purplish font-semibold" : ""
           }`}
         >
@@ -56,7 +56,7 @@ const Navigation = () => {
         </a>
         <a
           href="#projects"
-          className={`py-2 text-gray-300 ${
+          className={`py-2 text-gray-500 ${
             activeSection === "projects" ? "text-purplish font-semibold" : ""
           }`}
         >

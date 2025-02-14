@@ -15,7 +15,6 @@ const Experience = React.forwardRef<HTMLDivElement>((props, ref) => {
     };
     loadExperiences();
   }, []);
-
   return (
     <div id="experience" ref={ref} className="text-white max-w-3xl mx-auto">
       {experiences.map((experience) => (
@@ -28,14 +27,14 @@ const Experience = React.forwardRef<HTMLDivElement>((props, ref) => {
             {experience.experienceDesignation}
           </h3>
           <div className="flex items-center gap-2">
-            <HiOutlineBuildingOffice className="text-xl" />
+            <HiOutlineBuildingOffice className="text-xl text-gray-700" />
             <h1 className="text-purplish mt-1">{experience.experienceCompany}</h1>
           </div>
 
           {/* Location and Duration */}
           <div className="flex justify-between mt-2">
             <div className="flex gap-1 items-center">
-              <TfiLocationPin className="text-zinc-500"/>
+              <TfiLocationPin className="text-zinc-700"/>
               <p className="text-zinc-500 text-[12px] mt-1">
                 {experience.experienceLocation}
               </p>
@@ -46,7 +45,7 @@ const Experience = React.forwardRef<HTMLDivElement>((props, ref) => {
           </div>
 
           {/* Description */}
-          <p className="mt-2 text-gray-300">{experience.experienceDescription}</p>
+          <p className="mt-2 text-gray-600">{experience.experienceDescription}</p>
 
           {/* Tags */}
           <ExperienceTags tags={experience.experienceDesignation.split(" ")} /> {/* Split tags by space */}

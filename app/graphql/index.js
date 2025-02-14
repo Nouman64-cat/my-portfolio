@@ -28,21 +28,21 @@ export const fetchProjects = async () => {
 // New fetchExperiences function
 export const fetchExperiences = async () => {
   const query = gql`
-    query FetchExperiences {
-      experiences {
-        id
-        experienceLocation
-        experienceEndDate
-        experienceStartDate
-        experienceDesignation
-        experienceDescription
-        experienceCompany
-      }
-        // some comment
-    }
+ query MyQuery {
+  experiences {
+    id
+    experienceLocation
+    experienceEndDate
+    experienceStartDate
+    experienceDesignation
+    experienceDescription
+    experienceCompany
+  }
+}
   `;
   try {
     const result = await graphqlAPI.request(query);
+    console.log("fetching experience : ", result.experiences);
     return result.experiences;
   } catch (error) {
     console.error("Error fetching experiences:", error);

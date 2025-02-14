@@ -34,11 +34,6 @@ const Page = () => {
 
   return (
     <div className="p-4 md:p-14 flex flex-col md:flex-row w-full ">
-      {/* Left component */}
-      <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={100}
-      />
       <div className="w-full md:w-96 md:fixed md:top-14 md:left-14 mb-6 md:mb-0">
         <Left />
       </div>

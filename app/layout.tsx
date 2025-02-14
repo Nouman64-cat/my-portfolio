@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import StarBackground from "./components/general/StarBackground";
 import Dot from "./components/general/Dot";
+import BlobBackground from "./components/blob/BlobBackground";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,9 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-axiforma bg-dark_greyish text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-axiforma `}
       >
-          <Dot>{children}</Dot>
+        <BlobBackground />
+        <Dot>{children}</Dot>
       </body>
     </html>
   );
